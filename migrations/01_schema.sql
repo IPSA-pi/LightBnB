@@ -16,7 +16,7 @@ CREATE TABLE properties (
   title VARCHAR(255) NOT NULL,
   description TEXT,
   thumbnail_photo_url VARCHAR(255) NOT NULL,
-  cover_photo VARCHAR(255) NOT NULL,
+  cover_photo_url VARCHAR(255) NOT NULL,
   cost_per_night INTEGER NOT NULL DEFAULT 0,
   parking_spaces INTEGER NOT NULL DEFAULT 0,
   number_of_bathrooms INTEGER NOT NULL DEFAULT 0,
@@ -25,7 +25,7 @@ CREATE TABLE properties (
   street VARCHAR(255) NOT NULL DEFAULT 0,
   city VARCHAR(255) NOT NULL DEFAULT 0,
   province VARCHAR(255) NOT NULL DEFAULT 0,
-  postal_code VARCHAR(255) NOT NULL DEFAULT 0,
+  post_code VARCHAR(255) NOT NULL DEFAULT 0,
   active BOOLEAN NOT NULL DEFAULT TRUE
 );
 
