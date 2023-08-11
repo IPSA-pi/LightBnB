@@ -112,8 +112,29 @@ const addUser = function (user) {
  * @param {string} guest_id The id of the user.
  * @return {Promise<[{}]>} A promise to the reservations.
  */
-const getAllReservations = function (guest_id, limit = 10) {
-  return getAllProperties(null, 2);
+const getAllReservations = function (guest_id, limit = 5) {
+  const queryString = `
+    SELECT 
+      reservations.*,
+      properties.*
+    FROM reservations
+    JOIN properties ON properties.id = reservations.property_id
+    WHERE reservations.guest_id = $1
+    LIMIT $2; 
+  `;
+
+  const values = [guest_id, limit];  
+  
+  return pool
+    .query(queryString, values)
+    .then((result) => {
+      console.log(result.rows);
+      return result.rows || null;
+    })
+    .catch((err) => {
+      console.error(err.message);
+      // Consider adding additional error handling here
+    });
 };
 
 /// Properties
