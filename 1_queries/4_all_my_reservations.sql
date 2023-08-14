@@ -7,7 +7,6 @@ SELECT
 
 FROM users
 
-
 JOIN reservations ON reservations.guest_id = users.id
 JOIN properties ON properties.id = property_id
 JOIN property_reviews ON property_reviews.guest_id = users.id

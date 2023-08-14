@@ -1,5 +1,17 @@
 # LightBnB
 
+A simple multi-page Airbnb clone that uses a server-side JavaScript to display the information from queries to web pages via SQL queries.
+
+- log in or sign up
+- create new listings
+- view user's reservations
+- search and filter the properties db by:
+  - city
+  - min\max cost
+  - minimum rating
+
+![screen shot of project](../imgs/screenshot.png)
+
 ## Project Structure
 
 ```
@@ -53,3 +65,28 @@
 * `routes` contains the router files which are responsible for any HTTP requests to `/users/something` or `/api/something`. 
 * `styles` contains all of the sass files. 
 * `server.js` is the entry point to the application. This connects the routes to the database.
+
+## Getting started
+
+Open a terminal and start postgres by running: 
+
+`startpostgres`
+
+Then navigate to "LightBnB_WebApp-master" directory inside the root directory and run.
+
+`npm run local`
+
+You should be able to view the app in your browser going to localhost:3000.
+
+
+## Dependencies 
+
+- bcrypt, 
+- cookie-session
+- express
+- nodemon
+- pg
+
+## Dev dependencies
+
+- eslint
